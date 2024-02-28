@@ -1,3 +1,5 @@
+![image](https://github.com/angelodesenvolvedor/Jogo-da-Velha/assets/98216100/be32068e-9404-4b46-b77e-96cb8309916a)
+
 # Jogo da Velha
 
 # 📌 Descrição do Projeto
