@@ -3,7 +3,11 @@ let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameActive = true;
 
 function handleClick(index) {
-    if (gameBoard[index] === '' && gameActive) {
+    if (!gameActive) {
+        return;
+    }
+
+    if (gameBoard[index] === '') {
         gameBoard[index] = currentPlayer;
         document.getElementsByClassName('cell')[index].innerText = currentPlayer;
         document.getElementsByClassName('cell')[index].classList.add(currentPlayer === 'X' ? 'x-piece' : 'o-piece');
@@ -27,12 +31,35 @@ function checkWinner() {
         const [a, b, c] = combo;
         if (gameBoard[a] !== '' && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
             alert(`${currentPlayer} venceu!`);
-            gameActive = false;
+            restartGame();
+            return;
         }
     }
 
-    if (!gameBoard.includes('') && gameActive) {
+    if (!gameBoard.includes('')) {
         alert('Empate!');
-        gameActive = false;
+        restartGame();
+        return;
     }
 }
+
+function restartGame() {
+    // Limpa o tabuleiro e reinicia variáveis
+    for (let i = 0; i < gameBoard.length; i++) {
+        gameBoard[i] = '';
+        document.getElementsByClassName('cell')[i].innerText = '';
+        document.getElementsByClassName('cell')[i].classList.remove('x-piece', 'o-piece');
+    }
+
+    currentPlayer = 'X';
+    gameActive = true;
+}
+
+// Adiciona um event listener para reiniciar automaticamente quando o jogo terminar
+document.addEventListener('click', function (event) {
+    const restartButton = event.target.closest('.cell');
+    if (restartButton && !gameBoard.includes('')) {
+        restartGame();
+    }
+});
+
