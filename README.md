@@ -1,5 +1,6 @@
 # Jogo da Velha
-# Descrição do Projeto
+
+# 📌 Descrição do Projeto
 * O projeto oferece uma interface simples e intuitiva, permitindo que os jogadores cliquem nas células do tabuleiro para realizar suas jogadas. O jogo automaticamente determina o vencedor ou se há empate, proporcionando um ambiente envolvente para quem busca reviver a diversão do clássico jogo da velha.
 
 # 📚 Introdução
@@ -11,7 +12,7 @@
 * ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) - Responsável pela estilização e layout visual da interface do jogo.
 * ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) - Implementa a lógica do jogo, permitindo interatividade e verificação de vitória ou empate.
 
-# 👷 Autor
+# 🧑🏽‍💻 Autor
 
 * **Angelo Silvano** - *Front-End Developer* - [angelodesenvolvedor](https://github.com/angelodesenvolvedor)
 
