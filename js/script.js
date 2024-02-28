@@ -62,4 +62,3 @@ document.addEventListener('click', function (event) {
         restartGame();
     }
 });
-
