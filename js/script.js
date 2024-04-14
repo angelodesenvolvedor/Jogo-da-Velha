@@ -30,17 +30,23 @@ function checkWinner() {
     for (const combo of winningCombos) {
         const [a, b, c] = combo;
         if (gameBoard[a] !== '' && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
-            alert(`${currentPlayer} venceu!`);
-            restartGame();
+            showWinnerMessage(`${currentPlayer} venceu!`);
             return;
         }
     }
 
     if (!gameBoard.includes('')) {
-        alert('Empate!');
-        restartGame();
+        showWinnerMessage('Empate!');
         return;
     }
+}
+
+function showWinnerMessage(message) {
+    const messageElement = document.createElement('div');
+    messageElement.innerText = message;
+    messageElement.classList.add('winner-message');
+    document.body.appendChild(messageElement);
+    gameActive = false;
 }
 
 function restartGame() {
@@ -53,6 +59,11 @@ function restartGame() {
 
     currentPlayer = 'X';
     gameActive = true;
+    // Remove a mensagem de vencedor, se houver
+    const winnerMessageElement = document.querySelector('.winner-message');
+    if (winnerMessageElement) {
+        winnerMessageElement.remove();
+    }
 }
 
 // Adiciona um event listener para reiniciar automaticamente quando o jogo terminar
